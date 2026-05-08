@@ -1,0 +1,35 @@
+{
+    
+    "name": "@universal-crud",
+    "version": "0.1.0",
+    "description": "A policy-driven, registry-based CRUD & domain-action dispatcher for Next.js and node.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "test": "vitest",
+        "prepare": "npm run build",
+        "lint": "eslint . --ext .ts"
+    },
+    "keywords": [
+        "nextjs",
+        "node",
+        "crud",
+        "app-router",
+        "api"
+    ],
+    "license": "MIT",
+    "peerDependencies": {
+        "next": ">=13.0.0",
+        "react": ">=18.0.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "vitest": "^0.34.0",
+        "@types/node": "^20.0.0",
+        "esbuild": "^0.19.0"
+    }
+}
