@@ -1,8 +1,7 @@
-//the error classes
-//cruderror
+
 export class CrudError extends Error {
   status: number;
-// a constructorwith message and a status param
+
   constructor(message: string, status = 500) {
     super(message);
     this.status = status;

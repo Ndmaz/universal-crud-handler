@@ -18,8 +18,6 @@ export async function dispatch(
   req: any,
   params: { model: string; action: string }
 ) {
-  //registry
-  //resolveAuth is function 
   const {
     registry,
     resolveAuth,
@@ -29,21 +27,21 @@ export async function dispatch(
   } = options;
 
   const { model, action } = params;
-//getting the regesty based on model
+
   const entry = registry[model];
   if (!entry) throw new ModelNotFoundError(model);
 
   const { module, meta } = entry;
-//if the actionsis not allowed
+
   if (!meta.actions.includes(action))
     throw new ActionNotAllowedError(action);
-//resolvehandler function?
+
   const handlerFn = resolveHandlerFunction(
     module,
     action,
     model
   );
-//if there is none 
+
   if (!handlerFn)
     throw new ActionNotAllowedError(action);
 
