@@ -1,6 +1,5 @@
 {
-    
-    "name": "@universal-crud",
+    "name": "@universal-crud/next",
     "version": "0.1.0",
     "description": "A policy-driven, registry-based CRUD & domain-action dispatcher for Next.js and node.js",
     "main": "dist/index.js",
@@ -27,9 +26,15 @@
         "react": ">=18.0.0"
     },
     "devDependencies": {
-        "typescript": "^5.0.0",
-        "vitest": "^0.34.0",
         "@types/node": "^20.0.0",
-        "esbuild": "^0.19.0"
+        "@types/react": "^19.2.14",
+        "esbuild": "^0.19.0",
+        "next": "^16.2.6",
+        "react": "^19.2.6",
+        "typescript": "^5.0.0",
+        "vitest": "^0.34.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
