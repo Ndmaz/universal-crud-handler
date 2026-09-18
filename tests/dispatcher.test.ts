@@ -71,7 +71,7 @@ describe("dispatch", () => {
     const body = { name: "Navid" };
 
     await dispatch(
-      { registry: makeRegistry(handler) },
+      { registry: makeRegistry(handler), resolveAuth: auth({ isAuthenticated: true, userId: 1 }) },
       makeRequest("POST", { body }),
       { model: "User", action: "create" }
     );
@@ -222,6 +222,7 @@ describe("dispatch", () => {
             order.push("global");
           },
         ],
+        resolveAuth: auth({ isAuthenticated: true, userId: 1 }),
       },
       makeRequest("POST", { body: {} }),
       { model: "User", action: "create" }
@@ -241,6 +242,7 @@ describe("dispatch", () => {
             args.injected = "yes";
           },
         ],
+        resolveAuth: auth({ isAuthenticated: true, userId: 1 }),
       },
       makeRequest("POST", { body: { original: true } }),
       { model: "User", action: "create" }
@@ -299,6 +301,7 @@ describe("dispatch", () => {
     await dispatch(
       {
         registry: makeRegistry(handler),
+        resolveAuth: auth({ isAuthenticated: true, userId: 42 }),
         rateLimit,
       },
       makeRequest("POST", { body: {} }),
@@ -319,6 +322,7 @@ describe("dispatch", () => {
         registry: makeRegistry(handler, {
           protectedFields: ["password"],
         }),
+        resolveAuth: auth({ isAuthenticated: true, userId: 1 }),
       },
       makeRequest("POST", {
         body: {
