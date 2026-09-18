@@ -1,0 +1,10 @@
+{
+  "name": "universal-crud-next-example",
+  "private": true,
+  "scripts": {"dev":"next dev","build":"next build","start":"next start"},
+  "dependencies": {
+    "@universal-crud/next":"file:../..",
+    "@tanstack/react-query":"^5.100.9",
+    "next":"^16.2.6","react":"^19.2.6","react-dom":"^19.2.6"
+  }
+}
