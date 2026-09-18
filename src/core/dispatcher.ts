@@ -1,3 +1,4 @@
+import { NextRequest } from "next/server";
 import {
   CreateCrudHandlerOptions,
   CrudContext,
@@ -14,7 +15,7 @@ import { resolveHandlerFunction } from "../helpers/actionResolver";
 
 export async function dispatch(
   options: CreateCrudHandlerOptions,
-  req: any,
+  req: NextRequest,
   params: { model: string; action: string }
 ) {
   const {
