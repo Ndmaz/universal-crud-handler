@@ -309,7 +309,7 @@ describe("dispatch", () => {
     );
 
     expect(rateLimit).toHaveBeenCalledWith(
-      "127.0.0.1",
+      "42",
       { model: "User", action: "create", isWrite: true }
     );
   });
