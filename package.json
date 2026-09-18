@@ -45,5 +45,16 @@
   "type": "module",
   "bin": {
     "crud-generate-registry": "./bin/generate-registry.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ndmaz/universal-crud-handler.git"
+  },
+  "homepage": "https://github.com/Ndmaz/universal-crud-handler",
+  "bugs": {
+    "url": "https://github.com/Ndmaz/universal-crud-handler/issues"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
