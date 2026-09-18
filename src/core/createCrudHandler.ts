@@ -1,3 +1,4 @@
+import { NextRequest } from "next/server";
 import { dispatch } from "./dispatcher";
 import { errorResponse, successResponse } from "./response";
 import { CreateCrudHandlerOptions } from "./types";
@@ -6,7 +7,7 @@ export function createCrudHandler(
   options: CreateCrudHandlerOptions
 ) {
   return async function handler(
-    req: any,
+    req: NextRequest,
     params: { model: string; action: string }
   ) {
     try {
