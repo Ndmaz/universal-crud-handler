@@ -8,7 +8,7 @@
     "dist",
     "bin",
     "README.md",
-    "LICENCE.md"
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
