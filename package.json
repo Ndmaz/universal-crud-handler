@@ -8,13 +8,12 @@
     "dist",
     "bin",
     "README.md",
-    "LICENSE"
+    "LICENCE.md"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "vitest run",
     "prepare": "npm run build",
-    "lint": "eslint . --ext .ts",
     "test:watch": "vitest"
   },
   "keywords": [
