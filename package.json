@@ -9,9 +9,10 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.build.json",
-        "test": "vitest",
+        "test": "vitest run",
         "prepare": "npm run build",
-        "lint": "eslint . --ext .ts"
+        "lint": "eslint . --ext .ts",
+        "test:watch": "vitest"
     },
     "keywords": [
         "nextjs",
