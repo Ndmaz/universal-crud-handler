@@ -13,4 +13,4 @@ This directory contains the technical documentation for `@universal-crud/next` v
 - [Client](./client.md) — fetch client and TanStack Query hooks.
 - [CLI](./cli.md) — registry generator behavior and usage.
 
-The documentation describes the v0.1 implementation as it exists in the source tree. It intentionally avoids describing future compiler, adapter, plugin, or framework abstractions that are not part of this release.
+The documentation describes the v0.1 implementation as it exists in the source tree.
