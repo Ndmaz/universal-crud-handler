@@ -44,11 +44,11 @@
   },
   "type": "module",
   "bin": {
-    "crud-generate-registry": "./bin/generate-registry.cjs"
+    "crud-generate-registry": "bin/generate-registry.cjs"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ndmaz/universal-crud-handler.git"
+    "url": "git+https://github.com/Ndmaz/universal-crud-handler.git"
   },
   "homepage": "https://github.com/Ndmaz/universal-crud-handler",
   "bugs": {
