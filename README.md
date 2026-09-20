@@ -1,5 +1,7 @@
 # @universal-crud/next
-
+[![npm version](https://img.shields.io/npm/v/@universal-crud/next.svg)](https://www.npmjs.com/package/@universal-crud/next)
+[![npm downloads](https://img.shields.io/npm/dm/@universal-crud/next.svg)](https://www.npmjs.com/package/@universal-crud/next)
+[![CI](https://github.com/Ndmaz/universal-crud-handler/actions/workflows/ci.yml/badge.svg)](https://github.com/Ndmaz/universal-crud-handler/actions/workflows/ci.yml)
 Policy-driven, registry-based CRUD and domain-action dispatcher for Next.js App Router.
 
 `@universal-crud/next` provides a small request-dispatching layer for applications that want to expose model/domain actions through a consistent API route while keeping authentication, database access, business logic, middleware, and rate limiting under application control.
