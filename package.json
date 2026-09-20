@@ -1,41 +1,60 @@
 {
-    "name": "@universal-crud/next",
-    "version": "0.1.0",
-    "description": "A policy-driven, registry-based CRUD & domain-action dispatcher for Next.js and node.js",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "files": [
-        "dist"
-    ],
-    "scripts": {
-        "build": "tsc -p tsconfig.build.json",
-        "test": "vitest",
-        "prepare": "npm run build",
-        "lint": "eslint . --ext .ts"
-    },
-    "keywords": [
-        "nextjs",
-        "node",
-        "crud",
-        "app-router",
-        "api"
-    ],
-    "license": "MIT",
-    "peerDependencies": {
-        "next": ">=13.0.0",
-        "react": ">=18.0.0"
-    },
-    "devDependencies": {
-        "@tanstack/react-query": "^5.100.9",
-        "@types/node": "^20.0.0",
-        "@types/react": "^19.2.14",
-        "esbuild": "^0.19.0",
-        "next": "^16.2.6",
-        "react": "^19.2.6",
-        "typescript": "^5.0.0",
-        "vitest": "^0.34.0"
-    },
-    "publishConfig": {
-        "access": "public"
-    }
+  "name": "@universal-crud/next",
+  "version": "0.1.0",
+  "description": "Policy-driven, registry-based CRUD and domain-action dispatcher for Next.js App Router",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "prepare": "npm run build",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "nextjs",
+    "node",
+    "crud",
+    "app-router",
+    "api"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "next": ">=13.0.0",
+    "react": ">=18.0.0",
+    "@tanstack/react-query": ">=5.0.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-query": "^5.100.9",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.2.14",
+    "esbuild": "^0.19.0",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "typescript": "^5.0.0",
+    "vitest": "^0.34.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "bin": {
+    "crud-generate-registry": "bin/generate-registry.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ndmaz/universal-crud-handler.git"
+  },
+  "homepage": "https://github.com/Ndmaz/universal-crud-handler",
+  "bugs": {
+    "url": "https://github.com/Ndmaz/universal-crud-handler/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

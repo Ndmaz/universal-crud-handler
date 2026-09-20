@@ -1,3 +1,4 @@
+import { NextRequest } from "next/server";
 import {
   CreateCrudHandlerOptions,
   CrudContext,
@@ -9,13 +10,12 @@ import {
   ForbiddenError,
   RateLimitExceededError,
 } from "./errors";
-import { sanitizeInput } from "../helpers/sanitize";
+import { sanitizeInput, sanitizeOutput } from "../helpers/sanitize";
 import { resolveHandlerFunction } from "../helpers/actionResolver";
 
-//
 export async function dispatch(
   options: CreateCrudHandlerOptions,
-  req: any,
+  req: NextRequest,
   params: { model: string; action: string }
 ) {
   const {
@@ -52,20 +52,22 @@ export async function dispatch(
   const isWrite = ["POST", "PUT", "DELETE"].includes(
     req.method
   );
+  const isGuestCreate =
+    req.method === "POST" && action === "create";
 
   const requiresAuth =
-    restricted ||
-    (isWrite && !meta.allowGuestCreate);
+    restricted !== undefined ||
+    (isWrite && !(isGuestCreate && meta.allowGuestCreate));
 
   if (requiresAuth && !auth?.isAuthenticated)
     throw new UnauthorizedError();
 
-  if (restricted && auth?.role) {
+  if (restricted !== undefined) {
     const allowedRoles = Array.isArray(restricted)
       ? restricted
       : [restricted];
 
-    if (!allowedRoles.includes(auth.role))
+    if (!auth?.role || !allowedRoles.includes(auth.role))
       throw new ForbiddenError();
   }
 
@@ -111,5 +113,7 @@ export async function dispatch(
     await mw(args, ctx);
   }
 
-  return handlerFn(args, ctx);
+  const result = await handlerFn(args, ctx);
+
+  return sanitizeOutput(result, meta.protectedFields);
 }

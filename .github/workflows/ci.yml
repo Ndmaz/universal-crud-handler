@@ -1,17 +1,27 @@
 name: CI
-on: [push, pull_request]
+
+on:
+  push:
+  pull_request:
+
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: npm
+
       - name: Install
         run: npm ci
+
       - name: Build
         run: npm run build
+
       - name: Run tests
-        run: npm run test
+        run: npm test
